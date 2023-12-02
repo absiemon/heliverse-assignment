@@ -49,13 +49,20 @@ const addMockData = async () => {
 };
 
 //defining routes path  
+
+app.use('/', (req, res)=>{
+  return res.json({
+    message: "You are at the home page"
+  })
+})
+
 app.use("/api/user", userRoute);
 app.use("/api/query", searchRoute);
 app.use("/api/team", teamRoute);
 
-if(process.env.NODE_ENV==='production'){
-  app.use(express.static('client/build'))
-}
+// if(process.env.NODE_ENV==='production'){
+//   app.use(express.static('client/build'))
+// }
 
 const port = process.env.PORT || 8000;
 
