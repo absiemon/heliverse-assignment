@@ -42,7 +42,6 @@ const User = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(newUser)
     if (!newUser.first_name || !newUser.gender || !newUser.email || !newUser.domain) {
       alert("please fill all inputs");
       return;
@@ -61,7 +60,6 @@ const User = () => {
   }
 
   const handleSearch = () => {
-    console.log(inputVal)
     getUser(inputVal)
   }
 

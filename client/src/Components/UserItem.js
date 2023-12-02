@@ -21,7 +21,7 @@ const Useritem = React.memo((props) => {
     });
 
     const { user } = props;
-    const { first_name, last_name, email, gender, domain, available, avatar } = user;
+    const { id, first_name, last_name, email, gender, domain, available, avatar } = user;
     const context = useContext(UserState);
     const { userUpdate, deleteUser} = context;
 
@@ -57,7 +57,6 @@ const Useritem = React.memo((props) => {
     }
 
     const handleChange = (e) => {
-        console.log(e.target.value)
         setUpdateUser({ ...updateUser, [e.target.name]: e.target.value });
     }
     return (
@@ -71,11 +70,16 @@ const Useritem = React.memo((props) => {
                             <div className="header mt-2" style={{ display: 'flex', gap: '20px', alignItems: 'center', flexDirection: 'column' }}>
                                 <Avatar src={avatar} alt="profileImage" style={{ backgroundColor: '#f58b8b', height: '60px', width: '60px' }} />
                                 {first_name} {last_name}
-                                {/* <i className="envelope icon"></i> */}
                             </div>
                             <p style={{
                                 textAlign: "center",
                                 marginTop: "10px",
+                                fontSize: "16px",
+                                color: "#8d8686cc",
+                                fontWeight: "600"
+                            }}>{id}</p>
+                            <p style={{
+                                textAlign: "center",
                                 fontSize: "16px",
                                 color: "#8d8686cc",
                                 fontWeight: "600"

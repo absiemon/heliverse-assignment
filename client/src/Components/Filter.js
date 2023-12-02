@@ -86,21 +86,33 @@ const Filter = (props) => {
     ];
     
 
-
+    window.addEventListener("resize", ()=>{
+        if(window.screen.width < 760){
+            setIsFixed(false);
+        }
+    });
     useEffect(() => {
         const handleScroll = () => {
         const scrollY = window.scrollY || window.pageYOffset;
-        // Adjust the scroll threshold as needed
             const isScrolled = scrollY > 151;
             setIsFixed(isScrolled);
         };
 
-        if(window.screen.width> 760){
-            window.addEventListener('scroll', handleScroll);
-            return () => {
-                window.removeEventListener('scroll', handleScroll);
-            };
-        }
+        const handleResize = () => {
+            // Reattach the event listener when the screen size changes
+            if (window.innerWidth > 760) {
+              window.addEventListener('scroll', handleScroll);
+            } else {
+              window.removeEventListener('scroll', handleScroll);
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
+        };
         
     }, []);
 

@@ -1,6 +1,7 @@
 import UserContext from "./UserContext";
 import { useState } from "react";
-const URL = "http://localhost:8000";
+// const URL = "http://localhost:8000";
+const URL = "https://heliverse-backend-y77y.onrender.com";
 
 const UserState = (props) => {
   const [user, setUser] = useState([]);
@@ -158,7 +159,6 @@ const UserState = (props) => {
       return 1;
 
     }
-    console.log(selectedUsers)
     // If all checks pass, add the user to the selected users array
     setSelectedUsers([...selectedUsers, { id: id, first_name: first_name, last_name: last_name, domain: domain }]);
   }
