@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+}
+
+/* Filter.js CSS */
+
+.ui.column.grid>[class*="four wide"].column, .ui.grid>.column.row>[class*="four wide"].column, .ui.grid>.row>[class*="four wide"].column, .ui.grid>[class*="four wide"].column{
+  width: 100% !important;
+}
+
+.css-1y8ugea{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.green{
+  background: linear-gradient(170deg, rgb(236 239 239) 0%, rgb(255 235 176) 100%) !important
+}
+
+.filter_container{
+  background-color: #bfbebe;
+  padding: 6px 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 500;
+}
+
+@media  screen and (max-width:900px) {
+  .cards_container{
+    gap: 110px !important;
+  }
+}
+
+@media  screen and (max-width:760px) {
+  .user_info_header{
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .cards_container{
+    gap: 0px !important;
+  }
+  .header_small{
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .search_container{
+    justify-content: center !important;
+  }
+}
+
+
