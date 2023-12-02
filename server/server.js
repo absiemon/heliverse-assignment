@@ -50,11 +50,11 @@ const addMockData = async () => {
 
 //defining routes path  
 
-app.use('/', (req, res)=>{
-  return res.json({
-    message: "You are at the home page"
-  })
-})
+// app.use('/', (req, res)=>{
+//   return res.json({
+//     message: "You are at the home page"
+//   })
+// })
 
 app.use("/api/user", userRoute);
 app.use("/api/query", searchRoute);
