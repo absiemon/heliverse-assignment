@@ -37,7 +37,7 @@ const User = () => {
   }, [])
 
   useEffect(() => {
-    getUser(inputVal);
+    getUser(inputVal, {});
   }, [currentPage]);
 
   const handleSubmit = (event) => {
@@ -60,24 +60,27 @@ const User = () => {
   }
 
   const handleSearch = () => {
-    getUser(inputVal)
+    getUser(inputVal, {})
   }
 
   const handleSearchQueryChange = (e) => {
     setInputVal(e.target.value)
     if (e.target.value.length === 0) {
       setCurrentPage(1)
-      getUser(inputVal);
+      getUser("", {});
     }
   }
 
   const handelCancelFilter = (key)=>{
+    const newObj = {...filter, [key]: ""}
+    console.log(newObj)
     setFilter((prev)=>{
       return {
         ...prev, [key]: ""
       }
     })
-    getUser(inputVal)
+
+    getUser(inputVal, newObj)
   }
 
   return (

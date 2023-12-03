@@ -118,7 +118,7 @@ const Filter = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
-        getUser("");
+        getUser("", {});
         // setFilter({ domain: "", gender: "", available: "" })
     }
 

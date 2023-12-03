@@ -20,18 +20,27 @@ const UserState = (props) => {
   const [loading, setLoading] = useState(false)
 
   //Get All  a notes
-  const getUser = async (sq) => {
+  const getUser = async (sq, filterObj) => {
     //To do API call
     let url = `${URL}/api/user/fetchAllUser?search=${sq}`;
 
-    if(filter.domain){
-      url += `&domain=${filter.domain}`
+    const filterObjSize = Object.keys(filterObj).length;
+    let finalFilterObj = {};
+    if(filterObjSize > 0){
+      finalFilterObj = {...filterObj}
     }
-    if(filter.gender){
-      url += `&gender=${filter.gender}`
+    else{
+      finalFilterObj = {...filter}
     }
-    if(filter.available){
-      url += `&available=${filter.available}`
+
+    if(finalFilterObj.domain){
+      url += `&domain=${finalFilterObj.domain}`
+    }
+    if(finalFilterObj.gender){
+      url += `&gender=${finalFilterObj.gender}`
+    }
+    if(finalFilterObj.available){
+      url += `&available=${finalFilterObj.available}`
     }
     url += `&page=${currentPage}&perPage=20`
 
@@ -115,7 +124,7 @@ const UserState = (props) => {
     const Json = await response.json();
     if (Json.success) {
       alert("User Updated successfully");
-      getUser();
+      getUser("", {});
     }
     else {
       alert(Json.error);
