@@ -1,4 +1,4 @@
-# TimeSync
+# Full stack Application
 This is a full-stack web application that allows users to view and interact with a list of users. The mock data for the users can be found at this link.
 **The mock data for the users can be found at this link**
 https://drive.google.com/file/d/1ibmr3WD7Jw6oLL6O_W390WojCLfCHw-k/view?usp=sharing. 
