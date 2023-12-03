@@ -1,20 +1,30 @@
-# TimeSync
-It is a Web App for managing employee information and monitoring their activity. 
-It has attendance management functionality like Punch in and Punch out. 
-User can apply for leaves and admin can approve or reject the leave based upon various criteria. 
+# Full stack Application
+This is a full-stack web application that allows users to view and interact with a list of users. The mock data for the users can be found at this link.
+**The mock data for the users can be found at this link**
+https://drive.google.com/file/d/1ibmr3WD7Jw6oLL6O_W390WojCLfCHw-k/view?usp=sharing. 
+
+## The application has the following functionalities:
+- **Users in cards format with pagination: The users has been displayed in a visually appealing card format. Implemented pagination to display 20 users per page.**
+- **Search by Name: Users would be able to search for users by their names. As the user types in the search input, the list of displayed users would be dynamically updated to match the search query.**
+- **Added 3 filters: Implemenedt three filters - Domain, Gender, and Availability. Users would be able to select multiple filters simultaneously, and the displayed user list would be updated accordingly.**
+- **Create a team: Users would be able to create a team by selecting users from the list. Only users with unique domains and availability would be selectable for the team (similar to adding items to a cart in e-commerce websites).**
+- **Show team details: Once the team is created, displaying the details of the team, including the selected users' information.**
+- **Made it responsive: Ensured that the application is responsive and displays properly on different screen sizes.**
 
 
 ## Installation
-1. Download project
-2. Download required node packages using the npm install command:
-
+1. Clone the project repository to your local machine:
+   ```bash
+   git clone https://github.com/absiemon/heliverse-assignment.git
+   ```
+2. Naviagte to the client and server one by one and download the required node packages using the npm install command:
 
 ```bash
 $ npm install
 ```
-3. Create a .env file in the api directory of the application and add the following variables:
+3. Create a .env file in the server directory of the application and add the following variables:
 ```bash
-JWT_SECRET=your-secret-key
+MONGO_URL= your mongoDB url
 ```
 4. Start the backend by executing this command:
 ```bash
@@ -24,18 +34,6 @@ $ npm run dev
 ```bash
 $ npm start
 ```
-## Features
-The following features are included in this application:
-
-1. User authentication with JWT tokens.
-3. Protected routes.
-4. CRUD operations with MYSQL.
-5. React Router for client-side routing.
-6. It has attendance management functionality like Punch in and Punch out.
-7.User can apply for leaves and admin can approve or reject the leave based upon various criteria. 
-8. Slaes Visualisation using Kanban board.
-9. There are a lot of feature and i am working on it to improve it.
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
